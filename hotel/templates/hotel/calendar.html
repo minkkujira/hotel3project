@@ -1,0 +1,36 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+
+<div class="container" style="width: 500px;">
+  <div class="mx-auto mt-4" style="width: 200px;"
+    <a class="btn btn-primary" href="#" role="button">カレンダー作成</a>
+  </div>
+    {% include "hotel/page2.html" %} 
+  <style>
+    #calendar{margin: auto;}
+  </style>
+  <table id="calendar" class="table table-sm table table-hover">
+    <div class="mt-4"></div> 
+    <thead>
+      <tr>
+        <th scope="col" class="col-2">日付</th>
+        <th scope="col" class="col-1">休日</th>
+        <th scope="col" class="col-1">差額</th>
+        <th scope="col" class="col-1">修正</th>
+      </tr> 
+    </thead>
+    <tbody>
+      {% for calendar in calendar_list %}
+        <tr>
+          <td scope="row">{{calendar.calendar_day}}</td>
+          <td>{{calendar.calendar_holiday}}</td>
+          <td>{{calendar.calendar_sagaku}}</td>
+          <td><a href="#">修正</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+
+</div>
+
+{% endblock %}
+

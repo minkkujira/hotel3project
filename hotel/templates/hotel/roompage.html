@@ -1,0 +1,15 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+
+<a class="btn btn-primary" href="{% url 'roomuppage' %}" role="button">新規作成</a>
+
+{% for room in room_list %}
+<div class="post block">
+    <h2 class="subtitle">{{room.room_no}}</h2>
+    <small>部屋タイプ{{room.room_type}}</small>
+    <p>{{room.room_detail}}</p>
+    <a class="btn btn-secondary" href="{% url 'roomeditpage'  room.pk %}" role="button">修正します</a>
+    <a class="btn btn-success" href="{% url 'roomdelpage' room.pk %}" role="button">削除します</a>
+</div>
+{% endfor %}
+{% endblock %}

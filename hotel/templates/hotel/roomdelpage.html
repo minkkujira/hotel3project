@@ -1,0 +1,12 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+
+<h2>{{ object.room_no }}</h2>
+<h2>{{ object.room_num }}</h2>
+<h2>{{ object.room_type }}</h2>
+
+<form action="" method="post">{%  csrf_token %}
+    <input type="submit" value="削除します">
+</form>
+
+{% endblock %}

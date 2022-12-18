@@ -1,0 +1,12 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+<h1>プラン紹介ページ</h1>
+{% for plan in plans %}
+<div class="post block">
+    <h2 class="subtitle">{{plan.plan_no}}</h2>
+    <small>選べるプラン{{plan.plan_title}}</small>
+    <small>プラン人数{{plan.plan_num}}</small>
+    <p>{{plan.plan_content}}</p>
+</div>
+{% endfor %}
+{% endblock %}
